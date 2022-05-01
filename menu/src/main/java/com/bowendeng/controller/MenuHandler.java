@@ -1,6 +1,7 @@
 package com.bowendeng.controller;
 
 import com.bowendeng.entity.Menu;
+import com.bowendeng.entity.MenuVO;
 import com.bowendeng.repository.MenuRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -26,7 +27,8 @@ public class  MenuHandler {
     private MenuRepository menuRepository;
 
     @GetMapping("/findAll/{index}/{limit}")
-    public List<Menu> findAll(@PathVariable("index") int index, @PathVariable("limit") int limit){
-        return menuRepository.findAll(index, limit);
+    public MenuVO findAll(@PathVariable("index") int index, @PathVariable("limit") int limit){
+        List<Menu> list = menuRepository.findAll(index, limit);
+        return new MenuVO(0, "", 100, list);
     }
 }
