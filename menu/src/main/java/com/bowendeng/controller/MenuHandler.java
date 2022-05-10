@@ -15,7 +15,7 @@ import java.util.List;
 @RequestMapping("/menu")
 public class  MenuHandler {
 
-    @Value(("${server.port"))
+    @Value("${server.port")
     private String port; //come from config file in config server
     @GetMapping("/index")
     public String index(){
