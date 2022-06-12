@@ -37,7 +37,7 @@ public class AccountHandler {
                     admin.setId((int)hashMap.get("id"));
                     admin.setUsername((String)hashMap.get("username"));
                     session.setAttribute("admin", admin);
-                    result = "";
+                    result = "main";
                     break;
             }
         }

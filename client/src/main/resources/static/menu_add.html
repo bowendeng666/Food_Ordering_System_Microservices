@@ -12,25 +12,25 @@
     <div class="layui-container" style="width: 500px;height: 330px;padding-top: 60px;">
         <form class="layui-form" action="/menu/save" method="post">
             <div class="layui-form-item">
-                <label class="layui-form-label">菜品：</label>
+                <label class="layui-form-label">Cuisine:</label>
                 <div class="layui-inline">
-                    <input type="text" name="name" lay-verify="required" autocomplete="off" placeholder="请输入用户名" class="layui-input">
+                    <input type="text" name="name" lay-verify="required" autocomplete="off" placeholder="Please enter name" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label">单价：</label>
+                <label class="layui-form-label">Price:</label>
                 <div class="layui-inline">
-                    <input type="text" name="price" lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                    <input type="text" name="price" lay-verify="required" placeholder="Please enter price" autocomplete="off" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label">口味：</label>
+                <label class="layui-form-label">Flavor:</label>
                 <div class="layui-inline">
-                    <input type="text" name="flavor" lay-verify="required" placeholder="请输入年龄" autocomplete="off" class="layui-input">
+                    <input type="text" name="flavor" lay-verify="required" placeholder="Please enter flavor" autocomplete="off" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label">分类：</label>
+                <label class="layui-form-label">Type:</label>
                 <div class="layui-input-inline">
                     <select name="type.id">
                         <option th:each="type:${list}" th:text="${type.name}" th:value="${type.id}"></option>
@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="layui-form-item">
-                <button class="layui-btn" lay-submit="" lay-filter="demo2" style="margin-left: 160px;">提交</button>
+                <button class="layui-btn" lay-submit="" lay-filter="demo2" style="margin-left: 160px;">Complete</button>
             </div>
         </form>
     </div>
@@ -49,9 +49,9 @@
         var form = layui.form;
         var element = layui.element;
 
-        //自定义验证规则
+        //customised Validator
         form.verify({
-            price: [/(^[1-9]([0-9]+)?(\.[0-9]{1,2})?$)|(^(0){1}$)|(^[0-9]\.[0-9]([0-9])?$)/, "请输入正确的价格"]
+            price: [/(^[1-9]([0-9]+)?(\.[0-9]{1,2})?$)|(^(0){1}$)|(^[0-9]\.[0-9]([0-9])?$)/, "Please enter a valid price"]
         });
 
     });
